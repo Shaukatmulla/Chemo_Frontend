@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Box,
   Button,
-  Container,
   Paper,
   TextField,
   Typography,
@@ -43,19 +42,20 @@ export default function LoginPage() {
   };
 
   return (
-    <Container
-      maxWidth="xs"
+    <Box
       sx={{
         minHeight: "100vh",
         display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        justifyContent: "center", // horizontal center
+        alignItems: "center",     // vertical center
+        bgcolor: "#f5f7fb",
       }}
     >
       <Paper
         elevation={4}
         sx={{
-          width: "100%",
+          width: 380,
+          maxWidth: "90vw",
           padding: 4,
           borderRadius: 3,
           boxShadow: "0px 4px 18px rgba(0, 0, 0, 0.1)",
@@ -119,10 +119,10 @@ export default function LoginPage() {
               borderRadius: 2,
             }}
           >
-            {loading ? <CircularProgress size={26} /> : "Login"}
+            {loading ? <CircularProgress size={26} /> : "LOGIN"}
           </Button>
         </Box>
       </Paper>
-    </Container>
+    </Box>
   );
 }
